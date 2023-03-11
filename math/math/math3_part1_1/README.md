@@ -50,4 +50,23 @@ def check_independence(P, a, b):
 
     return res
 
-	
+https://habr.com/ru/post/556852/
+
+a n:          284
+b n:          16
+z-статистика: -1.6467438180091214
+p-значение:   [0.04980536]
+
+import numpy as np
+
+def check_independence(P, a, b):
+    # P -- matrix with probabilities, axis 0 -- xi, axis 1 -- eta
+    # a -- array with outcomes for xi
+    # b -- array with outcomes for eta
+    res = (a.mean() - b.mean()) >= (1.0 - P).mean()
+
+    return res
+
+check_independence(np.matrix([[1,1],[1,1]]), np.array([1,2]), np.array([1,2]))
+
+Ќеправильный ответ на тесте #0
