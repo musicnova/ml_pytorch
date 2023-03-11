@@ -1,3 +1,30 @@
+На языке python посчитай выражение для одной итерации градиентного спуска со скоростью alpha для минимизации функции f(x,y) = 0.5*(y-(a*x+b))*(y-(a*x+b)).
+
+Пример:
+import numpy as np
+
+def bce_grad(x, y, a, b, alpha):
+    a = ## YOUR CODE HERE
+    b = ## YOUR CODE HERE
+
+    res = np.array([a, b])
+    return res
+
+ChatGPT, [11.03.2023 18:33]
+# Пример вызова:
+bce_grad(x, y, a, b, alpha)
+
+# Ответ:
+import numpy as np
+
+def bce_grad(x, y, a, b, alpha):
+    a = a - alpha * (y - (a * x + b)) * x
+    b = b - alpha * (y - (a * x + b))
+
+    res = np.array([a, b])
+    return res
+
+	
 4. Градиентный спуск
 Запишите выражение для одной итерации градиентного спуска для минимизации функции
 

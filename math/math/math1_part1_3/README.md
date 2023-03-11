@@ -1,3 +1,34 @@
+На языке python напиши функцию с именем bce_grad. Её задача посчитать производную бинарной кросс-энтропии.
+
+Пример:
+import numpy as np
+
+def bce_grad(x, t, a, b):
+    res = ## YOUR CODE HERE
+    return res
+
+ChatGPT, [11.03.2023 18:19]
+x = np.array([1,2,3])
+t = np.array([1,0,1])
+a, b = 0.5, 0.5
+
+print(bce_grad(x, t, a, b))
+
+# Ответ:
+import numpy as np
+
+def bce_grad(x, t, a, b):
+    res = a * np.exp(x) / (a * np.exp(x) + b) - t
+    return res
+
+x = np.array([1,2,3])
+t = np.array([1,0,1])
+a, b = 0.5, 0.5
+
+print(bce_grad(x, t, a, b))
+# [ 0.5  -0.5   0.5]
+
+
 2. Производная бинарной кросс-энтропии
 
 Чему равна !!! производная !!! бинарной кросс-энтропии? 
